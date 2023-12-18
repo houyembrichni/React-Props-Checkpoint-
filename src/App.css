@@ -1,38 +1,94 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #eaeaea;
+  overflow: hidden;
+  margin: 0;
+  background-image: url(https://c4.wallpaperflare.com/wallpaper/161/188/999/2014-20th-fifa-world-cup-gold-trophy-wallpaper-preview.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.players {
+  display: flex;
+  flex-direction: row;
 }
 
-.App-link {
-  color: #61dafb;
+.player_Image {
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  margin: 20px;
 }
+.playerCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border-radius: 18px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin-top: 100px;
+  background-image: linear-gradient(
+    to right top,
+    #c6ae16,
+    #c1a512,
+    #bb9c0e,
+    #b5930a,
+    #af8a07
+  );
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 120px;
+}
+.playerName {
+  grid-area: text;
+  margin: 10px;
+  font-weight: 900;
+  text-align: center;
+}
+.playerTeam {
+  width: 40px;
+  height: 40px;
+  padding-left: 30%;
+  padding-right: 50%;
+}
+.playerCard:hover {
+  transform: scale(1.2);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+.playerAge {
+  font-weight: bold;
+}
+.playerJerseyNumber {
+  font-weight: bolder;
+  font-size: x-large;
+}
+.playerNationality {
+  width: 40px;
+  height: 40px;
+  padding-left: 30%;
+  padding-right: 50%;
+}
+@keyframes blurEffect {
+  0% {
+    filter: blur(0);
   }
-  to {
-    transform: rotate(360deg);
+  40% {
+    filter: blur(0);
   }
+  50% {
+    filter: blur(10px) drop-shadow(0 0 10px grey);
+  }
+  70% {
+    filter: blur(0);
+  }
+  100% {
+    filter: blur(0);
+  }
+}
+.logo {
+  animation: blurEffect 5s ease-in-out infinite;
 }
